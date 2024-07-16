@@ -142,6 +142,18 @@ def create_shade_map(all_trackpoints):
     
     # Create a dark mode map centered on the mean coordinate
     m = folium.Map(location=[center_lat, center_lon], zoom_start=15, tiles="cartodbdark_matter")
+    
+    # Add favicon links to the HTML head, pointing to the images subfolder
+    favicon_html = '''
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    '''
+    m.get_root().header.add_child(folium.Element(favicon_html))
 
     # Define colors for sun and shade
     sun_color = '#FFD700'  # Gold
