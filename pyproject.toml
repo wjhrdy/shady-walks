@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "shady-walks"
+version = "0.1.0"
+description = "A tool to visualize shady and sunny sections of walks"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "shady_walks"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+folium = "^0.14.0"
+geopy = "^2.3.0"
+numpy = "^1.24.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+shady-walks = "shady_walks.shade_map_visualizer:main"
