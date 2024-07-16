@@ -1,19 +1,19 @@
 [tool.poetry]
-name = "shade-heatmap-generator"
+name = "shady-walks"
 version = "0.1.0"
-description = "A tool to generate heatmaps of shady areas from GPX files"
+description = "A tool to visualize shady and sunny sections of walks"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-packages = [{include = "shade_heatmap_generator"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 folium = "^0.14.0"
-branca = "^0.6.0"
-numpy = "^1.22.0"
-scipy = "^1.10.0"
-geopy = "^2.4.1"
+geopy = "^2.3.0"
+numpy = "^1.24.3"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+shady-walks = "shady_walks.shade_map_visualizer:main"

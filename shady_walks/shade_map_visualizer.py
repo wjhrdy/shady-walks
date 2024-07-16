@@ -151,18 +151,22 @@ def process_gpx_files(directory):
             all_walks.append(waypoints)
     return all_walks
 
-# Directory containing GPX files
-gpx_directory = 'gpx'
+def main():
+    # Directory containing GPX files
+    gpx_directory = 'gpx'
 
-# Process all GPX files in the directory
-all_waypoints = process_gpx_files(gpx_directory)
+    # Process all GPX files in the directory
+    all_waypoints = process_gpx_files(gpx_directory)
 
-# Create the shade map
-shade_map = create_shade_map(all_waypoints)
+    # Create the shade map
+    shade_map = create_shade_map(all_waypoints)
 
-if shade_map:
-    # Save the map as index.html
-    shade_map.save('index.html')
-    print("Shade map has been generated and saved as 'index.html'")
-else:
-    print("Failed to generate map. Please check your GPX files.")
+    if shade_map:
+        # Save the map
+        shade_map.save('index.html')
+        print("Shade map has been generated and saved as 'index.html'")
+    else:
+        print("Failed to generate map. Please check your GPX files.")
+
+if __name__ == "__main__":
+    main()
