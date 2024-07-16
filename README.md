@@ -2,7 +2,7 @@
 
 This project visualizes shade data from GPX files, creating an interactive map showing sunny and shady sections of walks.
 
-![Shady Walks Screenshot](screenshots/shadywalks.png)
+![Shady Walks Screenshot](images/shadywalks.png)
 
 ## GitHub Pages
 
