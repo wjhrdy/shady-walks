@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import folium
 from folium import plugins
-from datetime import datetime
+from datetime import datetime, timedelta  # Add timedelta to the import
 import os
 import numpy as np
 from geopy.distance import geodesic
@@ -32,8 +32,8 @@ def parse_gpx_file(file_path):
 def calculate_shade_stats(segments):
     total_distance = 0
     shade_distance = 0
-    total_time = datetime.timedelta()
-    shade_time = datetime.timedelta()
+    total_time = timedelta()  # Use timedelta directly, not datetime.timedelta
+    shade_time = timedelta()  # Use timedelta directly, not datetime.timedelta
 
     for start, end, type in segments:
         distance = geodesic((start['lat'], start['lon']), (end['lat'], end['lon'])).meters
