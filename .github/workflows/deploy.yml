@@ -29,7 +29,8 @@ jobs:
         poetry install
 
     - name: Generate shade map
-      run: poetry run python shade_map_visualizer.py
+      run: |
+        poetry run shady-walks
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3

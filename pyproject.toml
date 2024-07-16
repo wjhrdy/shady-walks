@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "A tool to visualize shady and sunny sections of walks"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
+packages = [{include = "shady_walks"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
