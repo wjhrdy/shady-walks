@@ -232,8 +232,13 @@ def create_shade_map(all_trackpoints):
                 </ul>
             </div>
             """
+
+            # Calculate the middle point of the walk
+            middle_index = len(walk) // 2
+            middle_point = walk[middle_index]
+
             folium.Marker(
-                location=(walk[0]['lat'], walk[0]['lon']),
+                location=(middle_point['lat'], middle_point['lon']),
                 popup=folium.Popup(annotation, max_width=300),
                 icon=folium.Icon(color='green', icon='info-sign')
             ).add_to(m)
